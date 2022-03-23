@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu giá hoa quả</title>
+</head>
+<body>
+    <h1>GIÁ HOA QUẢ</h1>
+    <form action="giahoaqua.php">
+        <input id="typeFruit" type="text"></input>
+        <button type="button" onclick="getValue()">Xem giá</button>
+    </form>
+    <h2 id="gia"></h2>
+    <script>
+        var cam_price = 40000;
+        var oi_price = 20000;
+        var tao_price = 30000;
+        var duahau_price = 30000;
+        var xoai_price = 30000;
+        var chom_price = 40000;
+        var mcut_price = 50000;
+        function getValue() {
+            var getNameFruit = document.getElementById("typeFruit").value;
+            console.log(getNameFruit);
+            switch (getNameFruit) {
+                case "Cam":
+                    document.getElementById("gia").innerHTML=cam_price + " VNĐ/kg";
+                    break;
+                case "Ổi": 
+                    document.getElementById("gia").innerHTML=oi_price + " VNĐ/kg";
+                    break;
+                case "Táo": 
+                    document.getElementById("gia").innerHTML=duahau_price + " VNĐ/kg";
+                    break;
+                case "Xoài":
+                    document.getElementById("gia").innerHTML=xoai_price + " VNĐ/kg";
+                    break;
+                case "Chôm Chôm": 
+                    document.getElementById("gia").innerHTML=chom_price + " VNĐ/kg";
+                    break;
+                case "Măng Cụt": 
+                    document.getElementById("gia").innerHTML=mcut_price + " VNĐ/kg";
+                    break;
+                default:
+                    alert("Hiên tại không kinh doanh mặt hàng này!");
+            }
+        }
+
+    </script>
+</body>
+</html>
