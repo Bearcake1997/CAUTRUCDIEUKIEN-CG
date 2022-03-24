@@ -14,34 +14,28 @@
     </form>
     <h2 id="gia"></h2>
     <script>
-        var cam_price = 40000;
+        /*var cam_price = 40000;
         var oi_price = 20000;
         var tao_price = 30000;
         var duahau_price = 30000;
         var xoai_price = 30000;
         var chom_price = 40000;
-        var mcut_price = 50000;
+        var mcut_price = 50000;*/ 
         function getValue() {
             var getNameFruit = document.getElementById("typeFruit").value;
             console.log(getNameFruit);
             switch (getNameFruit) {
-                case "Cam":
-                    document.getElementById("gia").innerHTML=cam_price + " VNĐ/kg";
+                case "Cam": case "Chôm chôm": {price = "40000";}
+                    document.getElementById("gia").innerHTML=price + " VNĐ/kg";
                     break;
-                case "Ổi": 
-                    document.getElementById("gia").innerHTML=oi_price + " VNĐ/kg";
+                case "Ổi": {price = "20000";}
+                    document.getElementById("gia").innerHTML=price + " VNĐ/kg";
                     break;
-                case "Táo": 
-                    document.getElementById("gia").innerHTML=duahau_price + " VNĐ/kg";
+                case "Táo": case "Dưa hấu": case "Xoài": {price = "30000";} 
+                    document.getElementById("gia").innerHTML=price + " VNĐ/kg";
                     break;
-                case "Xoài":
-                    document.getElementById("gia").innerHTML=xoai_price + " VNĐ/kg";
-                    break;
-                case "Chôm Chôm": 
-                    document.getElementById("gia").innerHTML=chom_price + " VNĐ/kg";
-                    break;
-                case "Măng Cụt": 
-                    document.getElementById("gia").innerHTML=mcut_price + " VNĐ/kg";
+                case "Măng cụt": {price = "50000";}
+                    document.getElementById("gia").innerHTML=price + " VNĐ/kg";
                     break;
                 default:
                     alert("Hiên tại không kinh doanh mặt hàng này!");
