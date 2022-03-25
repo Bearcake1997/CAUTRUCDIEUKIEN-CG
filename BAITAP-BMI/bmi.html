@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>KIỂM TRA CHỈ SỐ CƠ THỂ</h1>
+    <fomr action="#">
+        <input type="number" id="weight" name="Cân nặng" placeholder="Nhập cân nặng của bạn">
+        <input type="number" id="height" name="Chiều cao" placeholder="Nhập chiều cao của bạn">
+        <br />
+        <br />
+        <br />
+        <button type="button" onclick="checkBMI();">KIỂM TRA</button>
+    </fomr>
+    <h2 id="result"></h2>
+    <script>
+        function checkBMI() {
+            let userW = document.getElementById("weight").value;
+            let userH = document.getElementById("height").value;
+            let BMI = userW / (Math.pow(userH, 2));
+            let kQua;
+            switch (true) {
+                case BMI < 16:
+                    kQua = "Gầy độ III";
+                    break;
+                case BMI >= 16 && BMI < 17:
+                    kQua = "Gầy độ II";
+                    break;
+                case BMI >= 17 && BMI < 18.5:
+                    kQua = "Gầy độ I";
+                    break;
+                case BMI >= 18.5 && BMI < 25:
+                    kQua = "Bình thường";
+                    break;
+                case BMI >= 25 && BMI < 30:
+                    kQua = "Thừa cân";
+                    break;
+                case BMI >= 30 && BMI < 35:
+                    kQua = "Béo phì độ I";
+                    break;
+                case BMI >= 35 && BMI < 40:
+                    kQua = "Béo phì độ II";
+                    break;
+                case BMI > 40:
+                    kQua = "Béo phì độ III";
+                    break;
+                default:
+                    alert("THÔNG TIN CỦA BẠN CHƯA CHÍNH XÁC!");
+                    break;
+            }
+            let result = document.getElementById("result").innerHTML = "Chỉ số cơ thể của bạn là: " + kQua;
+        }
+    </script>
+</body>
+
+</html>
