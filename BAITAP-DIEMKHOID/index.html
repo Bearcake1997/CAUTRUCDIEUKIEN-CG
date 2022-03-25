@@ -14,11 +14,11 @@
     <br/>
     Môn Anh <input id="diemAnh" type="number"></input><br/>
     <br/>
-    Khu vực <select name="khuvuc">
-                <option id="khuVuc" value="0.75">Khu vực 1</option>
-                <option id="khuVuc" value="0.5">Khu vực 2-NT</option>
-                <option id="khuVuc" value="0.25">Khu vực 2</option>
-                <option id="khuVuc" value="0">Khu vực 3</option>
+    Khu vực <select id="area" name="khuvuc">
+                <option id="khuVuc" value="kv1">Khu vực 1</option>
+                <option id="khuVuc" value="kv2nt">Khu vực 2-NT</option>
+                <option id="khuVuc" value="kv2">Khu vực 2</option>
+                <option id="khuVuc" value="kv3">Khu vực 3</option>
             </select>
     <button type="button" onclick="getValue()">Tính điểm</button>
     <h2 id ="diem" ></h2>
@@ -27,23 +27,25 @@
             let getDiemT = document.getElementById("diemToan").value;
             let getDiemV = document.getElementById("diemVan").value;
             let getDiemA = document.getElementById("diemAnh").value;
-            let sum = Number(getDiemT) + Number(getDiemV) + Number(getDiemA);
-            let area = document.getElementById("khuVuc").value;
-            function getArea() {
-                
-            }
+            let area = document.getElementById("area").value;
+            //console.log(area + getDiemA);
+            let sumD;
             switch (area) {
-                case ("Khu vực 1"):
-                    document.getElementById("diem").innerHTML= "điểm đại học khối D của bạn là" + (sum + 0.75);
+                case "kv1":
+                    sumD = +getDiemT + +getDiemV + +getDiemA + 0.75;
                     break;
-            
-                default:
+                case "kv2":
+                    sumD = +getDiemT + +getDiemV + +getDiemA + 0.5;
+                    break;
+                case "kv2nt": 
+                    sumD = +getDiemT + +getDiemV + +getDiemA + 0.25;
+                    break;
+                default: 
+                    sumD = +getDiemT + +getDiemV + +getDiemA;
                     break;
             }
+            let diem = document.getElementById("diem").innerHTML = "Tổng điểm Đại học khối D của bạn là: " + sumD;
         }
-
-    
-
     </script>
 </body>
 </html>
