@@ -16,8 +16,8 @@
     <script>
         function getValue() {
             var getNameFruit = document.getElementById("typeFruit").value;
-            console.log(getNameFruit);
-            getNameFruit = getNameFruit.toLowercase();
+            // console.log(getNameFruit);
+            //getNameFruit = getNameFruit.toLowercase();
             switch (getNameFruit) {
                 case "Cam": case "Chôm chôm": {price = "40000";}
                     document.getElementById("gia").innerHTML=price + " VNĐ/kg";
@@ -33,6 +33,7 @@
                     break;
                 default:
                     alert("Hiên tại không kinh doanh mặt hàng này!");
+                    break;
             }
         }
 

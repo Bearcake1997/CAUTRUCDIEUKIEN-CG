@@ -10,15 +10,15 @@
 
 <body>
     <h1>KIỂM TRA CHỈ SỐ CƠ THỂ</h1>
-    <fomr action="#">
+    <form action="#">
         <input type="number" id="weight" name="Cân nặng" placeholder="Nhập cân nặng của bạn">
         <input type="number" id="height" name="Chiều cao" placeholder="Nhập chiều cao của bạn">
         <br />
         <br />
         <br />
         <button type="button" onclick="checkBMI();">KIỂM TRA</button>
-    </fomr>
-    <h2 id="result"></h2>
+    </form>
+    <h3 id="result"></h3>
     <script>
         function checkBMI() {
             let userW = document.getElementById("weight").value;
